@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Shenanigans</title>
+
+<style>
+
+*{
+    margin:0;
+}
+
+body{overflow:hidden; background-color:#c3c3c3;}
+
+
+.background{
+    background-color:white;
+}
+
+.Walk{
+
+    background-image:url("player_walk.jpg");
+
+    transform:translatey(50px);
+    z-index:1;
+    margin-top:-30px;
+    width:8000px;
+    height:70px;
+
+    animation:walk 0.5s steps(12) infinite, move 10s linear infinite;
+}
+
+@keyframes walk{
+    0%{
+        background-position: 10px;
+
+    }
+    100%{
+        background-position: 1910px;
+
+    }
+}
+
+@keyframes move{
+    0%{
+        transform: translateX(-6300px) translateY(30px);
+        
+    }
+    100%{
+        transform: translateX(20px) translateY(30px);
+    }
+}
+
+#hornet{
+    background-image:url("hornet_run.gif");
+    background-size:cover;
+    transform:rotateY(180deg) translateY(800px);
+    width:250px;
+    height:150px;
+
+    animation: run 2.41s ease infinite;
+
+}
+@keyframes run{
+    0%{
+        transform:translateX(200px);
+    }
+    50%{
+        transform:translateX(1000px);
+    }
+    100%{
+        transform:translateX(200px);
+    }
+}
+
+#primalAspid1{
+    background-image:url("primal_aspid.spazz.gif");
+    background-size:cover;
+    width:200px;
+    height:150px;
+    z-index:0;
+    transform:translateX(-250px);
+
+    animation:wee1 2.41s linear infinite;
+    animation-delay:1.7s;
+}
+#primalAspid2{
+    background-image:url("primal_aspid.spazz.gif");
+    background-size:cover;
+    width:200px;
+    height:150px;
+    transform:translateX(-250px);
+    
+    animation:wee2 2.41s linear infinite;
+    animation-delay:0.5s;
+
+}
+
+@keyframes wee1{
+    0%{
+        transform:translateX(-150px) translateY(-300px);
+    }
+
+    100%{
+        transform:translateX(35vw) translateY(100vh);
+    }
+}
+
+@keyframes wee2{
+    0%{
+        transform:translateX(100vw) translateY(-450px);
+    }
+
+    100%{
+        transform:translateX(50vw) translateY(90vh);
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+
+    <div class="Set">
+        <div class="Walk"></div>
+        <div class="background"></div>
+    </div>
+
+<div id="tunnel">
+
+</div>
+
+
+<div id="primalAspid1"></div>
+<div id="primalAspid2"></div>
+<div id="hornet"></div>
+
+
+</body>
+</html>
